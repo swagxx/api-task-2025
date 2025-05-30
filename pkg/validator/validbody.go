@@ -5,16 +5,9 @@ import (
 	"errors"
 )
 
-func ValidBody(data interface{}) error {
-	switch v := data.(type) {
-	case model.Quote:
-		if v.Author == "" {
-			return errors.New("author is required")
-		}
-
-		if v.Quote == "" {
-			return errors.New("quote is required")
-		}
+func ValidBody(data model.Quote) error {
+	if data.Author == "" || data.Quote == "" {
+		return errors.New("author or Quote is empty")
 	}
 	return nil
 }

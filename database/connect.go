@@ -1,4 +1,4 @@
-package db
+package database
 
 import (
 	"api-task-2025/config"
